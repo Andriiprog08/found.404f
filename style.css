@@ -1,0 +1,20 @@
+:root{
+    --bg-primary: #1a1712;
+
+    --accent-primary: #f5c518;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fira sans', sans-serif;
+}
+
+body{
+    background: var(--bg-primary);
+}
+
+h1{
+    color: var(--accent-primary);
+}
