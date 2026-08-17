@@ -28,6 +28,67 @@ body{
     background: var(--bg-primary);
 }
 
-h1{
+h1, h2, h3{
     color: var(--accent-primary);
+}
+
+p{
+    color: var(--text-primary);
+    font-size: 17px;
+}
+
+a{
+    background-color: var(--bg-secondary);
+    text-decoration: none;
+    color: var(--accent-primary);
+    font-size: 17px;
+    transition: all 0.2s ease;
+}
+
+b{
+    color: var(--text-secondary);
+}
+
+.contact-section{
+    justify-items: center;
+    margin-top: 20px;
+}
+
+.contacts-block{
+    background-color: var(--bg-secondary);
+    border: 4px solid var(--border-accent);
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    height: 700px;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-title{
+    margin-top: 10px;
+}
+
+.link-group{
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+    padding: 20px 0;
+}
+
+.contact-link{
+    display: flex;
+    align-items: center;
+    padding: 20px 60px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    justify-content: center;
+}
+
+.contact-link:hover{
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+    background-color: var(--bg-elevated);
 }
