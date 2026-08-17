@@ -1,7 +1,20 @@
 :root{
-    --bg-primary: #1a1712;
+    --bg-primary: #121417;
+    --bg-secondary: #1a1d21;
+    --bg-elevated: #22262b;
 
-    --accent-primary: #f5c518;
+    --accent-primary: #3b82f6;
+    --accent-hover: #60a5fa;
+    --accent-muted: #2563eb;
+
+    --text-primary: #e8eaed;
+    --text-secondary: #9aa0a6;
+    --text-disabled: #5f6368;
+
+    --border-color: #2e3238;
+    --border-accent: #3b82f6;
+
+    --shadow-color: rgba(0, 0, 0, 0.5);
 }
 
 *{
