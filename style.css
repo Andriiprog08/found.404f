@@ -92,3 +92,17 @@ b{
     color: var(--accent-primary);
     background-color: var(--bg-elevated);
 }
+
+@media (max-width:480px){
+    .contacts-block{
+        padding: 0;
+        width: 415px;
+        height: 760px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contact-link{
+        padding: 23px 55px;
+    }
+}
