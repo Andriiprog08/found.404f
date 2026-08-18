@@ -46,12 +46,62 @@ a{
     background-color: var(--bg-secondary);
     text-decoration: none;
     color: var(--accent-primary);
-    font-size: 17px;
+    font-size: 18px;
     transition: all 0.2s ease;
 }
 
 b{
     color: var(--text-secondary);
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: var(--bg-secondary);
+    border-radius: 20px;
+    padding: 12px 20px;
+    gap: 16px;
+}
+
+.logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-weight: 700;
+    gap: 10px;
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.logo img{
+    width: 90px;
+}
+
+.logo h1{
+    margin: auto;
+}
+
+nav{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    gap: 10px;
+}
+
+nav a{
+    padding: 10px 20px;
+    border-radius: 999px;
+    background: var(--bg-primary);
+    transition: 0.2s;
+    white-space: nowrap;
+}
+
+nav a:hover, nav a.active{
+    background: var(--neon-deep);
+    color: var(--neon-cyan);
+    box-shadow: 0 0 20px var(--glow-color);
 }
 
 .contact-section{
