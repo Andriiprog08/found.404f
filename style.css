@@ -98,10 +98,44 @@ nav a{
     white-space: nowrap;
 }
 
-nav a:hover, nav a.active{
+nav a:hover, nav a.active, .cta:hover{
     background: var(--neon-deep);
     color: var(--neon-cyan);
     box-shadow: 0 0 20px var(--glow-color);
+}
+
+.cta{
+    position: relative;
+    background: var(--bg-primary);
+    border-radius: 999px;
+    padding: 17px 27px;
+}
+
+.cta::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 999px;
+    padding: 4px;
+    background: linear-gradient(
+        270deg,
+        var(--neon-blue),
+        var(--neon-cyan),
+        var(--neon-deep),
+        var(--neon-blue)
+    );
+    background-size: 400% 400%;
+    animation: border-flow 6s ease infinite;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
+
+
+@keyframes border-flow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .contact-section{
