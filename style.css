@@ -14,6 +14,11 @@
     --border-color: #2e3238;
     --border-accent: #3b82f6;
 
+    --neon-cyan: #22d3ee;
+    --neon-blue: #3b82f6;
+    --neon-deep: #1e40af;
+    --glow-color: rgba(59, 130, 246, 0.5);
+
     --shadow-color: rgba(0, 0, 0, 0.5);
 }
 
