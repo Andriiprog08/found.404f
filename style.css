@@ -35,19 +35,23 @@ body{
 
 h1, h2, h3{
     color: var(--accent-primary);
+    line-height: 1.2;
 }
+
+h1 { font-size: 2.5rem; font-weight: bolder; }
+h2 { font-size: 1.5rem; font-weight: bold; }
+h3 { font-size: 1.2rem; font-weight: bold; }
 
 p{
     color: var(--text-primary);
-    font-size: 17px;
+    font-size: 1rem;
+    font-weight: 400;
 }
 
 a{
-    background-color: var(--bg-secondary);
     text-decoration: none;
     color: var(--accent-primary);
     font-size: 18px;
-    transition: all 0.2s ease;
 }
 
 b{
@@ -69,9 +73,7 @@ header{
     display: flex;
     flex-direction: row;
     align-items: center;
-    font-weight: 700;
     gap: 10px;
-    font-size: 20px;
     flex-shrink: 0;
 }
 
@@ -167,6 +169,11 @@ nav a:hover, nav a.active, .cta:hover{
     padding: 20px 0;
 }
 
+.link-group a{
+    transition: all 0.2s ease;
+    background-color: var(--bg-secondary);
+}
+
 .contact-link{
     display: flex;
     align-items: center;
@@ -185,7 +192,7 @@ nav a:hover, nav a.active, .cta:hover{
 @media (max-width:480px){
     .contacts-block{
         padding: 0;
-        width: 415px;
+        width: 100%;
         height: 760px;
         justify-content: center;
         align-items: center;
