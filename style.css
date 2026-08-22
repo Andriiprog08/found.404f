@@ -91,11 +91,20 @@ b{
 header{
     display: flex;
     align-items: center;
+    position: sticky;
+    z-index: 1000;
     justify-content: space-between;
-    width: 100%;
-    border-radius: 20px;
-    padding: 12px 20px;
+    justify-self: center;
+    width: 90%;
+    border-radius: 60px;
+    padding: 20px 25px;
     gap: 16px;
+    align-items: center;
+    backdrop-filter: blur(8px);
+    background-color: color-mix(in srgb, var(--bg-primary) 70%, transparent);
+    transition: background-color 0.3s ease;
+    margin: 40px;
+
 }
 
 .logo{
@@ -178,6 +187,13 @@ header{
 }
 
 @media(max-width:768px){
+    header{
+        width: 100%;
+        margin-top: 0;
+        padding: 10px 12px;
+        border-radius: 14px;
+    }
+
     .burger{
         width: 60px; 
         height: 60px; 
@@ -193,8 +209,6 @@ header{
     header{
         width: 100%;
         box-sizing: border-box;
-        padding: 10px 12px;
-        border-radius: 14px;
         gap: 8px;
     }
 
