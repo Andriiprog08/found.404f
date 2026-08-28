@@ -29,6 +29,12 @@
     font-family: 'Fira sans', sans-serif;
 }
 
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh
+}
+
 h1, h2, h3{
     color: var(--accent-primary);
     line-height: 1.2;
@@ -225,6 +231,54 @@ header{
     .burger span:nth-child(1){ top: 14px; }
     .burger span:nth-child(2){ top: 21px; }
     .burger span:nth-child(3){ top: 28px; }
+}
+
+.center-wrapper{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro-text{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.intro-text h2{
+    font-family: "Carter One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 65px;
+}
+
+.intro-text p{
+    font-size: 40px;
+}
+
+.name-user, .my-name{
+    font-family: 'Bungee Inline', sans-serif,;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 65px;
+    color: var(--neon-cyan);
+}
+
+@media(max-width:768px){
+    .intro-text h2{
+        font-size: 35px;
+    }
+
+    .name-user, .my-name{
+        font-size: 35px;
+    }
+
+    .intro-text p{
+        font-size: 25px;
+    }
 }
 
 .contact-section{
