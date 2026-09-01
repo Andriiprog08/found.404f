@@ -1,3 +1,58 @@
+const contentEl = document.getElementById('page-content');
+
+async function loadPage(url,addToHistory = true) {
+
+    contentEl.classList.add('fade-out');
+
+    try{
+        const res = await fetch(url);
+        if (!res.ok) throw new Error('Page not found');
+        const html = await res.text();
+
+        await new Promise(r => setTimeout(r, 250));
+
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        const newContent = doc.getElementById('page-content');
+
+        if (newContent){
+            contentEl.innerHTML = newContent.innerHTML;
+        }
+
+        document.title = doc.title;
+
+        if (addToHistory){
+            history.pushState({ url }, '', url);
+        }
+
+        contentEl.classList.remove('fade-out');
+        contentEl.classList.add('fade-in');
+        setTimeout(() => contentEl.classList.remove('fade-in'), 300);
+
+        window.scrollTo(0, 0);
+    } catch (err) {
+        window.location.href = url;
+    }
+}
+
+document.addEventListener('click', (e) => {
+    const link = e.target.closest('a');
+    if (!link) return;
+
+    const url = link.getAttribute('href');
+    const isInternal = link.hostname === window.location.hostname;
+    const isHtml = url && !url.startsWith('#') && !url.startsWith('mailto:') && !url.startsWith('http') || isInternal;
+
+    if (isInternal && isHtml && link.target !== '_blank') {
+        e.preventDefault();
+        loadPage(url);
+    }
+});
+
+window.addEventListener('popstate', (e) =>{
+    loadPage(window.location.pathname, false);
+});
+
 fetch('bg-grid.html')
     .then(response => response.text())
     .then(data => {
