@@ -76,3 +76,38 @@ fetch('header.html')
         }
     });
 
+(function () {
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    if (isTouchDevice) return;
+
+    function initCursor() {
+        const target = document.getElementById('cursorTarget');
+
+        if (!target) {
+            return setTimeout(initCursor, 50);
+        }
+
+        let mouseX = window.innerWidth / 2;
+        let mouseY = window.innerHeight / 2;
+        let posX = mouseX;
+        let posY = mouseY;
+        const speed = 0.07;
+
+        window.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        function animate() {
+            posX += (mouseX - posX) * speed;
+            posY += (mouseY - posY) * speed;
+            target.style.transform = `translate(${posX}px, ${posY}px) translate(-50%, -50%)`;
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    }
+
+    initCursor();
+
+})();
