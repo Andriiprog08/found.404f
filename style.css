@@ -285,6 +285,10 @@ header{
     color: var(--neon-cyan);
 }
 
+.name-hover:hover{
+    color: var(--neon-deep);
+}
+
 @media(max-width:768px){
     .intro-text h2{
         font-size: 35px;
