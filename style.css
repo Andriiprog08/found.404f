@@ -481,6 +481,16 @@ header{
     transform: rotate(-45deg);
 }
 
+@media(max-width:768px){
+    .blogblock-info{
+        width: 85%;
+    }
+
+    .info-blog{
+        flex-direction: column;
+    }
+}
+
 .cursor-target{
     position: fixed;
     top: 0;
