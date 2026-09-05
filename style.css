@@ -17,6 +17,7 @@
     --neon-cyan: #22d3ee;
     --neon-blue: #3b82f6;
     --neon-deep: #1e40af;
+    --important: rgb(154, 92, 92);
     --glow-color: rgba(59, 130, 246, 0.5);
 
     --shadow-color: rgba(0, 0, 0, 0.5);
@@ -422,6 +423,62 @@ header{
         text-align: center;
         word-break: break-word;
     }
+}
+
+.blog-page{
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+.blogblock-info{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    padding: 20px 25px;
+    height: auto;
+    justify-self: center;
+    border-radius: 20px;
+    backdrop-filter: blur(8px);
+    background-color: color-mix(in srgb, var(--bg-secondary) 70%, transparent);
+    transition: background-color 0.3s ease;
+}
+
+.blogblock-info img{
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.info-blog{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.info-blog div{
+    display: flex;
+    flex-direction: column;
+    line-height: 30px;
+}
+
+.important-blog-info{
+    color: var(--important);
+    font-weight: 800;
+}
+
+.blog-data-link{
+    justify-content: center;
+    align-items: center;
+    line-height: 30px;
+}
+
+.blog-data-link p{
+    color: var(--text-disabled);
+    font-weight: 400;
+}
+
+.blog-data-link .svg-blog{
+    transform: rotate(-45deg);
 }
 
 .cursor-target{
