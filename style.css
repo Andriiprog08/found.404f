@@ -426,11 +426,11 @@ header{
 }
 
 .blog-page{
-    margin-top: 80px;
     margin-bottom: 80px;
 }
 
 .blogblock-info{
+    margin-top: 80px;
     display: flex;
     flex-direction: column;
     width: 70%;
@@ -459,6 +459,10 @@ header{
     display: flex;
     flex-direction: column;
     line-height: 30px;
+}
+
+.info-blog h2{
+    margin-bottom: 5px;
 }
 
 .important-blog-info{
