@@ -16,6 +16,7 @@ async function loadPage(url,addToHistory = true) {
         const newContent = doc.getElementById('page-content');
 
         if (newContent){
+            contentEl.className = newContent.className;
             contentEl.innerHTML = newContent.innerHTML;
         }
 
@@ -64,7 +65,7 @@ fetch('header.html')
     .then(data => {
         document.getElementById('header-placeholder').innerHTML = data;
 
-         const burgerBtn = document.getElementById('burgerBtn');
+        const burgerBtn = document.getElementById('burgerBtn');
         const currentPage = window.location.pathname.split('/').pop(); // например "menu.html" или "index.html"
 
         if (currentPage === 'menu.html') {
