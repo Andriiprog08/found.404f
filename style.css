@@ -427,6 +427,10 @@ header{
 
 .blog-page{
     margin-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .blogblock-info{
