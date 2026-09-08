@@ -30,6 +30,7 @@ async function loadPage(url,addToHistory = true) {
         contentEl.classList.add('fade-in');
         setTimeout(() => contentEl.classList.remove('fade-in'), 300);
 
+        updateBurgerState();
         window.scrollTo(0, 0);
     } catch (err) {
         window.location.href = url;
@@ -60,21 +61,26 @@ fetch('bg-grid.html')
         document.getElementById('bg-placeholder').innerHTML = data;
     });
 
+function updateBurgerState() {
+    const burgerBtn = document.getElementById('burgerBtn');
+    if (!burgerBtn) return; // хедер ещё не загружен
+
+    const currentPage = window.location.pathname.split('/').pop();
+
+    if (currentPage === 'menu.html') {
+        burgerBtn.href = 'index.html';
+        document.body.classList.add('menu-page');
+    } else {
+        burgerBtn.href = 'menu.html';
+        document.body.classList.remove('menu-page');
+    }
+}
+
 fetch('header.html')
     .then(response => response.text())
     .then(data => {
         document.getElementById('header-placeholder').innerHTML = data;
-
-        const burgerBtn = document.getElementById('burgerBtn');
-        const currentPage = window.location.pathname.split('/').pop(); // например "menu.html" или "index.html"
-
-        if (currentPage === 'menu.html') {
-        burgerBtn.href = 'index.html';
-        burgerBtn.classList.add('active');
-        } else {
-        burgerBtn.href = 'menu.html';
-        burgerBtn.classList.remove('active');
-        }
+        updateBurgerState();
     });
 
 (function () {
