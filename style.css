@@ -398,36 +398,24 @@ hr.scan::after{
     display: flex;
     gap: 16px;
     flex-direction: column;
-} /*
+}
 
-@media (max-width:480px){
-    .contacts-block{
-        padding: 24px 14px;
-        width: 100%;
-        height: auto;
-        border-width: 2px;
-        border-radius: 14px;
+@media (max-width:768px){
+    .contact-block{
+        display: flex;
+        flex-direction: column;
+        width: 90%;
     }
 
-    .contact-title{
-        text-align: center;
-    }
-
-    .link-group{
-        width: 100%;
-        gap: 12px;
-        padding: 14px 0;
+    .contacts-block-links{
+        margin: 20px 0;
     }
 
     .contact-link{
-        padding: 16px 14px;
-        width: 100%;
-        box-sizing: border-box;
-        font-size: 0.9rem;
-        text-align: center;
-        word-break: break-word;
+        display: flex;
+        flex-direction: row;
     }
-} */
+}
 
 .blog-page{
     margin-bottom: 80px;
