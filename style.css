@@ -352,10 +352,29 @@ header{
     padding: 0 80px;
 }
 
-.title-contact-block hr{
+hr.scan{
     margin: 15px 0;
-    border: 3px solid var(--border-accent);
-    border-radius: 50px;
+    border: 0;
+    height: 3px;
+    position: relative;
+    overflow: hidden;
+    background: rgba(0, 200, 255, 0.25);
+    box-shadow: 0 0 12px rgba(0, 200, 255, 0.5);
+}
+
+hr.scan::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -30%;
+    width: 30%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, #00f5ff, #fff, #00f5ff, transparent);
+    animation: scan 2.5s ease-in-out infinite;
+}
+
+@keyframes scan{
+    to { left: 100%;}
 }
 
 .contact-block{
