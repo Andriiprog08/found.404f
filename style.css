@@ -400,20 +400,41 @@ hr.scan::after{
     flex-direction: column;
 }
 
+.contact-link{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
 @media (max-width:768px){
+    .contact-section{
+        margin: 40px 0;
+        padding: 0 20px;
+    }
+
     .contact-block{
-        display: flex;
         flex-direction: column;
-        width: 90%;
+        width: 100%;
+        gap: 30px;
     }
 
     .contacts-block-links{
-        margin: 20px 0;
+        flex-direction: column;
+        gap: 15px;
+        margin: 0;
     }
 
     .contact-link{
         display: flex;
         flex-direction: row;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .contact-link span:last-child{
+        overflow-wrap: anywhere;
+        min-width: 0;
     }
 }
 
