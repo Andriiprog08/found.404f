@@ -347,7 +347,7 @@ header{
     gap: 10px;
 }
 
-.contact-section{
+/* .contact-section{
     justify-items: center;
     margin-top: 20px;
 }
@@ -423,7 +423,7 @@ header{
         text-align: center;
         word-break: break-word;
     }
-}
+} */
 
 .blog-page{
     margin-bottom: 80px;
