@@ -521,6 +521,12 @@ hr.scan::after{
     margin: 4px 0;
 }
 
+@media(max-width:768px){
+    .about-section{
+        padding: 0 30px;
+    }
+}
+
 .cursor-target{
     position: fixed;
     top: 0;
