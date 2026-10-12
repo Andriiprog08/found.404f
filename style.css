@@ -527,6 +527,65 @@ hr.scan::after{
     }
 }
 
+.Projects-page{
+    display: grid;
+    grid-template-columns: 1 fr 1 fr;
+    align-items: start;
+    min-height: 100vh;
+    padding: 80px 60px;
+    box-sizing: border-box;
+}
+
+.Projects-title{
+    text-align: left;
+    margin-bottom: 5px;
+    font-size: 60px;
+}
+
+.project-num{
+    color: var(--text-primary);
+}
+
+.menu-projects{
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.menu-projects a{
+    font-size: 50px;
+    transition: color .3s;
+    padding: 20px;
+}
+
+.menu-projects a:hover{
+    color: var(--neon-cyan);
+}
+
+.menu-projects hr{
+    background: var(--border-accent);
+    height: 3px;
+    box-shadow: 0 0 12px rgba(0, 200, 255, 0.5);
+    border: 0;
+}
+
+.preview{
+    grid-column: 1;
+    grid-row: 0.4;
+    justify-self: start;
+    align-self: start;
+    max-width: 100%;
+    max-height: 80vh;
+    width: 800px;
+    height: auto;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity .4s;
+    pointer-events: none;
+}
+
 .cursor-target{
     position: fixed;
     top: 0;

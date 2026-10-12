@@ -118,3 +118,9 @@ fetch('header.html')
     initCursor();
 
 })();
+
+document.querySelectorAll('.menu-projects a'). forEach(link=>{
+    const img = document.getElementById(link.dataset.img);
+    link.addEventListener('mouseenter', () => img.style.opacity = 1);
+    link.addEventListener('mouseleave', () => img.style.opacity = 0);
+});
