@@ -529,7 +529,7 @@ hr.scan::after{
 
 .Projects-page{
     display: grid;
-    grid-template-columns: 1 fr 1 fr;
+    grid-template-columns: 1fr 1fr;
     align-items: start;
     min-height: 100vh;
     padding: 80px 60px;
@@ -552,12 +552,12 @@ hr.scan::after{
     display: flex;
     flex-direction: column;
     text-align: center;
+    gap: 20px;
 }
 
 .menu-projects a{
     font-size: 50px;
     transition: color .3s;
-    padding: 20px;
 }
 
 .menu-projects a:hover{
@@ -573,7 +573,7 @@ hr.scan::after{
 
 .preview{
     grid-column: 1;
-    grid-row: 0.4;
+    grid-row: 1;
     justify-self: start;
     align-self: start;
     max-width: 100%;
