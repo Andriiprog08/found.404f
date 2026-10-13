@@ -323,6 +323,10 @@ header{
     left: 0;
 }
 
+.link-moreinfo{
+    margin: 20px;
+}
+
 @media(max-width:768px){
     .intro-text h2{
         font-size: 35px;
