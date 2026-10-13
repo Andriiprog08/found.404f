@@ -586,6 +586,29 @@ hr.scan::after{
     pointer-events: none;
 }
 
+@media (max-width: 768px){
+    .Projects-page{
+        grid-template-columns: 1fr;
+        padding: 40px 20px;
+        align-items: center;
+    }
+
+    .preview{
+        display: none;
+    }
+
+    .menu-projects{
+        grid-column: 1;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .menu-projects a{
+        font-size: clamp(28px, 8vw, 48px);
+    }
+}
+
 .cursor-target{
     position: fixed;
     top: 0;
