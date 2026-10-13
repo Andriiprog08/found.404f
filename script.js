@@ -44,7 +44,7 @@ document.addEventListener('click', (e) => {
     const url = link.getAttribute('href');
     const isInternal = link.hostname === window.location.hostname;
     const isHtml = url && !url.startsWith('#') && !url.startsWith('mailto:');
-    
+
     if (isInternal && isHtml && link.target !== '_blank') {
         e.preventDefault();
         loadPage(url);
@@ -119,8 +119,16 @@ fetch('header.html')
 
 })();
 
-document.querySelectorAll('.menu-projects a'). forEach(link=>{
+document.addEventListener('mouseover', (e) =>{
+    const link = e.target.closest('.menu-projects a');
+    if (!link) return;
     const img = document.getElementById(link.dataset.img);
-    link.addEventListener('mouseenter', () => img.style.opacity = 1);
-    link.addEventListener('mouseleave', () => img.style.opacity = 0);
+    if (img) img.style.opacity = 1;
+});
+
+document.addEventListener('mouseout', (e) =>{
+    const link = e.target.closest('.menu-projects a');
+    if (!link) return;
+    const img = document.getElementById(link.dataset.img);
+    if (img) img.style.opacity = 0;
 });
