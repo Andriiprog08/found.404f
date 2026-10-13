@@ -43,8 +43,8 @@ document.addEventListener('click', (e) => {
 
     const url = link.getAttribute('href');
     const isInternal = link.hostname === window.location.hostname;
-    const isHtml = url && !url.startsWith('#') && !url.startsWith('mailto:') && !url.startsWith('http') || isInternal;
-
+    const isHtml = url && !url.startsWith('#') && !url.startsWith('mailto:');
+    
     if (isInternal && isHtml && link.target !== '_blank') {
         e.preventDefault();
         loadPage(url);
