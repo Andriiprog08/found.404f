@@ -1,7 +1,9 @@
+const BASE = new URL('.', document.currentScript.src).href;
+const abs = (p) => new URL(p, BASE).href;
 const contentEl = document.getElementById('page-content');
 
 async function loadPage(url,addToHistory = true) {
-
+    url = abs(url);
     contentEl.classList.add('fade-out');
 
     try{
@@ -52,10 +54,10 @@ document.addEventListener('click', (e) => {
 });
 
 window.addEventListener('popstate', (e) =>{
-    loadPage(window.location.pathname, false);
+    loadPage(window.location.href, false);
 });
 
-fetch('bg-grid.html')
+fetch(abs('bg-grid.html'))
     .then(response => response.text())
     .then(data => {
         document.getElementById('bg-placeholder').innerHTML = data;
@@ -76,7 +78,7 @@ function updateBurgerState() {
     }
 }
 
-fetch('header.html')
+fetch(abs('header.html'))
     .then(response => response.text())
     .then(data => {
         document.getElementById('header-placeholder').innerHTML = data;
