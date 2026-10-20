@@ -45,13 +45,13 @@ h1 { font-size: 2.5rem; font-weight: bolder; }
 h2 { font-size: 1.5rem; font-weight: bold; }
 h3 { font-size: 1.2rem; font-weight: bold; }
 
-p{
+p, .brief-description-project .td-special{
     color: var(--text-primary);
     font-size: 1rem;
     font-weight: 400;
 }
 
-a{
+a, .brief-description-project td{
     text-decoration: none;
     color: var(--accent-primary);
     font-size: 18px;
@@ -611,6 +611,63 @@ hr.scan::after{
     .menu-projects a{
         font-size: clamp(28px, 8vw, 48px);
     }
+}
+
+/* -------Style projects------- */
+
+.primary-info-project{
+    display: flex;
+    flex-direction: column;
+}
+
+.primary-img-projects-block{
+    justify-content: center;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.primary-img-projects{
+    width: 1080px;
+    height: auto;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.info-block-project{
+    padding: 0 100px;
+}
+
+.block-table-and-p-project{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.table-project-block, .info-p-block-project{
+    padding: 10px 90px;
+}
+
+.brief-description-project{
+    border-collapse: separate;
+    border-spacing: 0 12px;
+}
+
+.brief-description-project td, .brief-description-project .td-special{
+    padding: 8px 16px;
+    font-size: 23px;
+}
+
+.info-p-block-project{
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    padding: 0 120px;
+}
+
+.info-p-block-project p{
+    font-size: 30px;
+    text-align: center;
+    line-height: 1.6;
 }
 
 .cursor-target{
