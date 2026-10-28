@@ -79,11 +79,25 @@ function updateBurgerState() {
 }
 
 fetch(abs('header.html'))
-    .then(response => response.text())
+    .then(response => {
+        if (!response.ok) throw new Error('header.html: ' + response.status);
+        return response.text();
+    })
     .then(data => {
-        document.getElementById('header-placeholder').innerHTML = data;
+        const placeholder = document.getElementById('header-placeholder');
+        placeholder.innerHTML = data;
+
+        placeholder.querySelectorAll('img').forEach(img => {
+            try {
+                img.src = abs(img.getAttribute('src'));
+            } catch (e) {
+                console.error('img path error', e);
+            }
+        });
+
         updateBurgerState();
-    });
+    })
+    .catch(err => console.error('Header load failed:', err));
 
 (function () {
     const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
