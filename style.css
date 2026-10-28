@@ -115,24 +115,28 @@ b{
 header{
     display: flex;
     align-items: center;
-    position: sticky;
-    top: 20px;
-    z-index: 1000;
     justify-content: space-between;
-    justify-self: center;
-    width: 90%;
-    border-radius: 60px;
-    padding: 20px 25px;
     gap: 16px;
+
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    
+    width: 90%;
+    padding: 20px 25px;
+    border-radius: 60px;
+
     backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     background-color: color-mix(in srgb, var(--bg-primary) 70%, transparent);
     transition: background-color 0.3s ease;
-    margin: 40px auto 0;
-    margin-bottom: 0;
 }
 
 #header-placeholder{
-    display: contents;
+    display: block;
+    width: 100%;
 }
 
 .logo{
@@ -216,8 +220,8 @@ header{
 
 @media(max-width:768px){
     header{
+        top: 0;
         width: 100%;
-        margin: 0 auto;
         padding: 10px 12px;
         border-radius: 14px;
     }

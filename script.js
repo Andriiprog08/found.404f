@@ -78,6 +78,21 @@ function updateBurgerState() {
     }
 }
 
+function setupHeader() {
+    const placeholder = document.getElementById('header-placeholder');
+    const header = placeholder.querySelector('header');
+    if (!header) return;
+
+    const syncHeight = () => {
+        const top = parseFloat(getComputedStyle(header).top) || 0;
+        placeholder.style.height = (header.offsetHeight + top) + 'px';
+    };
+
+    syncHeight();
+    new ResizeObserver(syncHeight).observe(header);
+    window.addEventListener('resize', syncHeight);
+}
+
 fetch(abs('header.html'))
     .then(response => {
         if (!response.ok) throw new Error('header.html: ' + response.status);
@@ -88,13 +103,10 @@ fetch(abs('header.html'))
         placeholder.innerHTML = data;
 
         placeholder.querySelectorAll('img').forEach(img => {
-            try {
-                img.src = abs(img.getAttribute('src'));
-            } catch (e) {
-                console.error('img path error', e);
-            }
+            img.src = abs(img.getAttribute('src'));
         });
 
+        setupHeader();
         updateBurgerState();
     })
     .catch(err => console.error('Header load failed:', err));
